@@ -10,7 +10,7 @@ const UserInput = () => {
 
     const [userInput, setUserInput] = useState('')
 
-    const navigate= useNavigate()
+    const navigate = useNavigate()
 
     const userDispatch = () => {
         dispatch(changeName(userInput))
@@ -18,13 +18,22 @@ const UserInput = () => {
     }
 
     return (
-        <div className='route'>
-            <h1>User input</h1>
-            <form className="input-container">
-                <input type="text" value={userInput} onChange={ e => setUserInput( e.target.value)}/>
-                <button onClick={userDispatch} >Login</button>
-            </form>
-        </div>
+        <>
+            <>
+                <h2 data-text='&nbsp;POKÉDEX&nbsp;'>&nbsp;POKÉDEX&nbsp;</h2>
+            </>
+            <div className='route'>
+
+                <div className="gretings-container">
+                    <h3 className='gretings'>¡Hi trainer!</h3>
+                    <p>In order to get started, please enter your name below</p>
+                </div>
+                <form className="input-container">
+                    <input type="text" value={userInput} onChange={e => setUserInput(e.target.value)} placeholder='type your name here...' />
+                    <input type='submit' value='Login' onClick={userDispatch} />
+                </form>
+            </div>
+        </>
     );
 };
 

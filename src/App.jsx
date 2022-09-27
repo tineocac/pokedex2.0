@@ -12,7 +12,6 @@ function App() {
     <HashRouter>
       <div className="App">
         <Routes>
-
           <Route path='/' element={<UserInput />} />
 
           <Route element={<ProtectedRoutes />}>

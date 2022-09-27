@@ -1,29 +1,125 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-#root{
-  min-height: 100vh;
+body {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* font-family:'Kiwi Maru', serif; */
+  font-family: "Press Start 2P", cursive;
+  width: 100%;
 }
 
-.App{
+.App {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.route {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5em;
+}
+
+h2 {
+  position: relative;
+  font-size: 6rem;
+  color: #fff;
+  font-family: "Press Start 2P", cursive;
+  margin-bottom: 1em;
+}
+
+h2::before {
+  content: attr(data-text);
+  position: absolute;
+  color: rgba(255, 203, 5);
+  width: 350px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 5px solid black;
+  animation: animate 8s linear infinite;
+  filter: drop-shadow(12px 0 rgba(29, 44, 94, 1))
+    drop-shadow(0 12px rgba(29, 44, 94, 1));
+  /* drop-shadow(0 0 20px rgba(29, 44, 94, 1))
+  drop-shadow(0 0 100px blue); */
+}
+
+@keyframes animate {
+  0%,
+  10%,
+  100% {
+    width: 0;
+  }
+
+  70%,
+  90% {
+    width: 100%;
+  }
+}
+
+.gretings {
+  font-size: 3rem;
+  color: #2eab65;
+  margin-bottom: 0.5em;
+  filter: drop-shadow(5px 0 0 black);
+}
+
+.input-container {
+  width: 650px;
   margin: 0 auto;
 }
 
-.route{
-  text-align: center;
+input {
+  position: relative;
 }
 
-.pokemon-card{
+input[type="text"] {
+  background: #2f4858;
+  width: 500px;
+  height: 50px;
+  border: none;
+  outline: none;
+  padding: 0 25px;
+  border-radius: 25px 0 0 25px;
+  color: #fff;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.1rem;
+}
+
+input[type="submit"] {
+  border-radius: 0 25px 25px 0;
+  width: 150px;
+  right: -5px ;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 203, 5);
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.1rem;
+  transition: 2s;
+}
+
+input[type="submit"]:hover{
+  background: #2eab65;
+  transform: scale(1.05);
+  transition: 1s;
+}
+
+
+.pokemon-card {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.pokemon-img{
+.pokemon-img {
   width: 100px;
 }
