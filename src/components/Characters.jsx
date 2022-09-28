@@ -66,24 +66,25 @@ const Characters = () => {
                     <input type='submit' value='Search' onClick={searchName} />
                 </form>
             </header>
-            <select onChange={(e) => typeSelected(e.target.value)}>
-                <option value="Hola">Select a pokemon type</option>
+            <select className='container_type-pokemon' onChange={(e) => typeSelected(e.target.value)}>
+                <option className='type-pokemon' value="Hola">Select a pokemon type</option>
                 {
                     type.map(type => (
-                        <option key={type.url} value={type.url}>{type.name}</option>
+                        <option className='type-pokemon' key={type.url} value={type.url}>{type.name}</option>
                     ))
                 }
             </select>
             <div className="pagination">
-                <button onClick={() => setPage(page - 1)}
+                <button className='change-page' onClick={() => setPage(page - 1)}
                     disabled={page === 1}
                 >Prev Pag</button>
+                
                 {
                     pagesNumber.map(number => (
-                        <button key={number} onClick={() => setPage(number)}>{number}</button>
+                        <button className='page-number' key={number} onClick={() =>setPage(number)}>{number}</button>
                     ))
                 }
-                <button onClick={() => setPage(page + 1)}
+                <button className='change-page' onClick={() => setPage(page + 1)}
                     disabled={page === lastPage}
                 >Next Pag</button>
             </div>
@@ -98,15 +99,15 @@ const Characters = () => {
                 }
             </ul>
             <div className="pagination">
-                <button onClick={() => setPage(page - 1)}
+                <button className='change-page' onClick={() => setPage(page - 1)}
                     disabled={page === 1}
                 >Prev Pag</button>
                 {
                     pagesNumber.map(number => (
-                        <button key={number} onClick={() => setPage(number)}>{number}</button>
+                        <button className='page-number' key={number} onClick={() => setPage(number)}>{number}</button>
                     ))
                 }
-                <button onClick={() => setPage(page + 1)}
+                <button className='change-page' onClick={() => setPage(page + 1)}
                     disabled={page === lastPage}
                 >Next Pag</button>
             </div>

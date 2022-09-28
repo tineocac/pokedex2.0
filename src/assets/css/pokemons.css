@@ -1,3 +1,84 @@
-.pokedex{
-    margin-top: 1em;
+.pokedex {
+  margin-top: 1em;
+  color: #fef9f0;
+}
+
+.container_type-pokemon {
+  margin-top: 2em;
+  width: 300px;
+  height: 50px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 5px 20px rgba(47, 72, 88, 1);
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.7rem;
+}
+
+.container_type-pokemon::-webkit-scrollbar {
+  width: 10px;
+}
+
+.container_type-pokemon::-webkit-scrollbar-thumb {
+  background: rgba(255, 203, 5);
+  border-radius: 2em;
+}
+
+.container_type-pokemon::-webkit-scrollbar-thumb:hover {
+  background: #2eab65;
+}
+
+.type-pokemon {
+  text-indent: 50px;
+}
+
+.pagination {
+    position: relative;
+    background: #fff;
+    display: flex;
+    padding: 10px 20px;
+    box-shadow: 0 5px 15px rgba(47, 72, 88, 1);
+    gap: .3em;
+    flex-wrap: wrap;
+    border-radius: 50px;
+    margin: 2em;
+}
+
+.page-number{
+    width: 50px;
+   height: 50px;
+   font-family: "Press Start 2P", cursive;
+   font-size: .7rem;
+   cursor: pointer;
+   border-radius: 50%;
+   border: none;
+ background: none;
+ box-shadow: 5px 3px 1px rgba(47, 72, 88, .35);
+    
+}
+
+.page-number:hover{
+   background: #2eab65;
+   color: #fff;
+   box-shadow: 0 5px 15px rgba(47, 72, 88, 1);
+   
+}
+
+.change-page{
+    /* font-weight: 600; */
+    font-family: "Press Start 2P", cursive;
+    font-size: .6rem;
+    cursor: pointer;
+    border-radius: 1em;
+    padding: 0 .5em;
+    border: none;
+    background: none;
+    box-shadow: 5px 3px 1px rgba(47, 72, 88, .35);
+}
+
+.change-page:hover{
+    background:rgba(255, 203, 5);
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(47, 72, 88, 1);
 }
