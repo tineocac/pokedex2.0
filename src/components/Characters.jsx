@@ -35,13 +35,13 @@ const Characters = () => {
         axios
             .get(typeUrl)
             .then(res => setCharacterList(res.data.pokemon));
-            setPage(1)
+        setPage(1)
     }
 
     const pokemonPerPage = 10
     const lastPage = Math.ceil(charactersList.length / pokemonPerPage)
-    const [ page, setPage] = useState(1)
-   
+    const [page, setPage] = useState(1)
+
 
     const lastPokemonIndex = page * pokemonPerPage
     const firstPokemonIndex = lastPokemonIndex - pokemonPerPage
@@ -49,18 +49,23 @@ const Characters = () => {
 
     const pagesNumber = [];
 
-    for ( let i = 1; i <= lastPage; i++){
-            pagesNumber.push(i)
+    for (let i = 1; i <= lastPage; i++) {
+        pagesNumber.push(i)
     }
 
     return (
-        <div className='route'>
-            <h1>Characters</h1>
-            <h2>Bienvenido {userName}</h2>
-            <form className="input-container">
-                <input type="text" value={inputName} onChange={e => setInputName(e.target.value)} />
-                <button onClick={searchName}>Search</button>
-            </form>
+        <>
+            <h2 className='pokedex' data-text='&nbsp;POKÉDEX&nbsp;'>&nbsp;POKÉDEX&nbsp;</h2>
+
+            <header className='header-container'>
+                <nav className="gretings-container">
+                    <h3 className='gretings'>¡Bienvenido {userName}!</h3>
+                </nav>
+                <form className="input-container">
+                    <input type="text" value={inputName} onChange={e => setInputName(e.target.value)} placeholder='type pokemon name here' />
+                    <input type='submit' value='Search' onClick={searchName} />
+                </form>
+            </header>
             <select onChange={(e) => typeSelected(e.target.value)}>
                 <option value="Hola">Select a pokemon type</option>
                 {
@@ -69,20 +74,20 @@ const Characters = () => {
                     ))
                 }
             </select>
-            <div className="buttons">
+            <div className="pagination">
                 <button onClick={() => setPage(page - 1)}
-                disabled={page === 1}
+                    disabled={page === 1}
                 >Prev Pag</button>
                 {
-                    pagesNumber.map( number => (
+                    pagesNumber.map(number => (
                         <button key={number} onClick={() => setPage(number)}>{number}</button>
                     ))
                 }
-                <button onClick={() => setPage( page + 1)}
-                disabled={page === lastPage}
+                <button onClick={() => setPage(page + 1)}
+                    disabled={page === lastPage}
                 >Next Pag</button>
             </div>
-            <ul>
+            <ul className='pokemons-container'>
                 {
                     pageSelected?.map(character => (
                         <CharacterCard
@@ -92,21 +97,20 @@ const Characters = () => {
                     ))
                 }
             </ul>
-            <div className="buttons">
+            <div className="pagination">
                 <button onClick={() => setPage(page - 1)}
-                disabled={page === 1}
+                    disabled={page === 1}
                 >Prev Pag</button>
                 {
-                    pagesNumber.map( number => (
+                    pagesNumber.map(number => (
                         <button key={number} onClick={() => setPage(number)}>{number}</button>
                     ))
                 }
-                <button onClick={() => setPage( page + 1)}
-                disabled={page === lastPage}
+                <button onClick={() => setPage(page + 1)}
+                    disabled={page === lastPage}
                 >Next Pag</button>
             </div>
-            
-        </div>
+        </>
     );
 };
 

@@ -22,17 +22,18 @@ const UserInput = () => {
             <>
                 <h2 data-text='&nbsp;POKÉDEX&nbsp;'>&nbsp;POKÉDEX&nbsp;</h2>
             </>
-            <div className='route'>
+            <header className='header-container'>
 
-                <div className="gretings-container">
+                <nav className="gretings-container">
                     <h3 className='gretings'>¡Hi trainer!</h3>
                     <p>In order to get started, please enter your name below</p>
-                </div>
+                </nav>
+
                 <form className="input-container">
-                    <input type="text" value={userInput} onChange={e => setUserInput(e.target.value)} placeholder='type your name here...' />
-                    <input type='submit' value='Login' onClick={userDispatch} />
+                    <input className='input-type' type="text" value={userInput} onChange={e => setUserInput(e.target.value)} placeholder='type your name here...' />
+                    <input className='input-submit' type='submit' value='Login' onClick={userDispatch} />
                 </form>
-            </div>
+            </header>
         </>
     );
 };

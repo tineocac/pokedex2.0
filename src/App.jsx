@@ -4,6 +4,7 @@ import UserInput from './components/UserInput'
 import Characters from './components/Characters'
 import CharacterDetail from './components/CharacterDetail'
 import ProtectedRoutes from './components/ProtectedRoutes'
+import './assets/css/pokemons.css'
 
 function App() {
 

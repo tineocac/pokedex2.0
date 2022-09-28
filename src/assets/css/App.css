@@ -21,7 +21,7 @@ body {
   align-items: center;
 }
 
-.route {
+.header-container {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -47,8 +47,6 @@ h2::before {
   animation: animate 8s linear infinite;
   filter: drop-shadow(12px 0 rgba(29, 44, 94, 1))
     drop-shadow(0 12px rgba(29, 44, 94, 1));
-  /* drop-shadow(0 0 20px rgba(29, 44, 94, 1))
-  drop-shadow(0 0 100px blue); */
 }
 
 @keyframes animate {
@@ -96,7 +94,7 @@ input[type="text"] {
 input[type="submit"] {
   border-radius: 0 25px 25px 0;
   width: 150px;
-  right: -5px ;
+  right: -5px;
   height: 50px;
   border: none;
   cursor: pointer;
@@ -106,12 +104,11 @@ input[type="submit"] {
   transition: 2s;
 }
 
-input[type="submit"]:hover{
+input[type="submit"]:hover {
   background: #2eab65;
   transform: scale(1.05);
   transition: 1s;
 }
-
 
 .pokemon-card {
   display: flex;
