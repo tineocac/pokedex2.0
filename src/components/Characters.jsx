@@ -49,15 +49,21 @@ const Characters = () => {
 
     const pagesNumber = [];
 
+
     for (let i = 1; i <= lastPage; i++) {
         pagesNumber.push(i)
+    }
+
+    const styles={
+        backGround: 'black'
     }
 
     return (
         <>
             <h2 className='pokedex' data-text='&nbsp;POKÉDEX&nbsp;'>&nbsp;POKÉDEX&nbsp;</h2>
-
+            <i className="fa-solid fa-right-from-bracket"onClick={() => navigate(-1)}></i>
             <header className='header-container'>
+
                 <nav className="gretings-container">
                     <h3 className='gretings'>¡Bienvenido {userName}!</h3>
                 </nav>
@@ -67,7 +73,8 @@ const Characters = () => {
                 </form>
             </header>
             <select className='container_type-pokemon' onChange={(e) => typeSelected(e.target.value)}>
-                <option className='type-pokemon' value="Hola">Select a pokemon type</option>
+                <option className='type-pokemon' >Select a pokemon type</option>
+
                 {
                     type.map(type => (
                         <option className='type-pokemon' key={type.url} value={type.url}>{type.name}</option>
@@ -80,8 +87,8 @@ const Characters = () => {
                 >Prev Pag</button>
                 
                 {
-                    pagesNumber.map(number => (
-                        <button className='page-number' key={number} onClick={() =>setPage(number)}>{number}</button>
+                    pagesNumber.slice(0, 20).map(number => (
+                        <button className='page-number' key={number} onClick={() => setPage(number) }>{number}</button>
                     ))
                 }
                 <button className='change-page' onClick={() => setPage(page + 1)}
@@ -93,7 +100,8 @@ const Characters = () => {
                     pageSelected?.map(character => (
                         <CharacterCard
                             key={character.url ? character.url : character.pokemon.url}
-                            url={character.url ? character.url : character.pokemon.url} />
+                            url={character.url ? character.url : character.pokemon.url}
+                        />
 
                     ))
                 }
@@ -103,7 +111,7 @@ const Characters = () => {
                     disabled={page === 1}
                 >Prev Pag</button>
                 {
-                    pagesNumber.map(number => (
+                    pagesNumber.slice(0, 20).map(number => (
                         <button className='page-number' key={number} onClick={() => setPage(number)}>{number}</button>
                     ))
                 }
@@ -111,6 +119,7 @@ const Characters = () => {
                     disabled={page === lastPage}
                 >Next Pag</button>
             </div>
+            <i className="fa-solid fa-sliders" onClick={() => navigate('/settings')}></i>
         </>
     );
 };

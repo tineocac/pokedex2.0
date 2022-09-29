@@ -33,7 +33,8 @@ const UserInput = () => {
                     <input className='input-type' type="text" value={userInput} onChange={e => setUserInput(e.target.value)} placeholder='type your name here...' />
                     <input className='input-submit' type='submit' value='Login' onClick={userDispatch} />
                 </form>
-            </header>
+            </header>       
+            <i className="fa-solid fa-sliders" onClick={() => navigate('/settings')}></i>    
         </>
     );
 };

@@ -11,7 +11,7 @@ body {
   min-height: 100vh;
   font-family: "Press Start 2P", cursive;
   width: 100%;
-  background: #FEF9F0;
+  background: #fef9f0;
 }
 
 .App {
@@ -21,15 +21,15 @@ body {
   align-items: center;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 12px;
   height: 12px;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background: linear-gradient(transparent, rgba(255, 203, 5));
 }
-::-webkit-scrollbar-thumb:hover{
+::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(transparent, #2eab65);
 }
 
@@ -43,7 +43,7 @@ body {
 h2 {
   position: relative;
   font-size: 6rem;
-  color: #FEF9F0;
+  color: #fef9f0;
   font-family: "Press Start 2P", cursive;
   margin-bottom: 1em;
 }
@@ -133,4 +133,51 @@ input[type="submit"]:hover {
   width: 100px;
 }
 
+.fa-circle-arrow-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0.5em;
+  font-size: 3rem;
+  opacity: 0.5;
+  color: #2f4858;
+  transition: 1s;
+  cursor: pointer;
+}
 
+.fa-solid:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  transition: 1s;
+}
+
+.fa-right-from-bracket{
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 0.5em;
+  font-size: 3rem;
+  opacity: 0.5;
+  color: #C0564B;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.fa-sliders{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 0.5em;
+  font-size: 3rem;
+  opacity: 0.5;
+  color: #2F4858;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.settings{
+  font-size: 5.5rem;
+  position: absolute;
+  top: 0;
+  margin-top: 1em;
+}
