@@ -14,7 +14,14 @@ const Settings = () => {
             <div className="settings-container">
                 <div className="theme-container">
                     <h1>Theme</h1>
-
+                    
+                    <label className='toggle'>
+                        <p>Light</p>
+                        <input type="checkbox" />
+                        <span className='check'></span>
+                        <p>Dark</p>
+                    </label>
+                    
                 </div>
                 <div className="items-container">
                     <h1>Items per page</h1>
