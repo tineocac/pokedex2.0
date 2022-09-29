@@ -56,7 +56,7 @@ body {
 
 h2 {
   position: relative;
-  font-size: 6rem;
+  font-size: 5rem;
   color: var(--body-bg-color);
   font-family: "Press Start 2P", cursive;
   margin-bottom: 1em;
@@ -89,14 +89,14 @@ h2::before {
 }
 
 .gretings {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: var(--gretings-color);
   margin-bottom: 0.5em;
   filter: drop-shadow(5px 0 0 black);
 }
 
 .input-container {
-  width: 650px;
+  width: 550px;
   margin: 0 auto;
 }
 
@@ -106,27 +106,27 @@ input {
 
 input[type="text"] {
   background: var(--box-shadow);
-  width: 500px;
-  height: 50px;
+  width: 400px;
+  height: 40px;
   border: none;
   outline: none;
   padding: 0 25px;
   border-radius: 25px 0 0 25px;
   color: var(--body-bg-color);
   font-family: "Press Start 2P", cursive;
-  font-size: 1.1rem;
+  font-size: .8rem;
 }
 
 input[type="submit"] {
   border-radius: 0 25px 25px 0;
   width: 150px;
   right: -5px;
-  height: 50px;
+  height: 40px;
   border: none;
   cursor: pointer;
   background: rgba(255, 203, 5);
   font-family: "Press Start 2P", cursive;
-  font-size: 1.1rem;
+  font-size: .8rem;
   transition: 2s;
 }
 
@@ -152,7 +152,7 @@ input[type="submit"]:hover {
   top: 0;
   left: 0;
   margin: 0.5em;
-  font-size: 3rem;
+  font-size: 2.5rem;
   opacity: 0.5;
   color: var(--box-shadow);
   transition: 1s;
@@ -170,7 +170,7 @@ input[type="submit"]:hover {
   top: 0;
   right: 0;
   margin: 0.5em;
-  font-size: 3rem;
+  font-size: 2.5rem;
   opacity: 0.5;
   color: #c0564b;
   transition: 1s;
@@ -182,7 +182,7 @@ input[type="submit"]:hover {
   bottom: 0;
   right: 0;
   margin: 0.5em;
-  font-size: 3rem;
+  font-size: 2.5rem;
   opacity: 0.5;
   color: var(--box-shadow);
   transition: 1s;
@@ -190,7 +190,7 @@ input[type="submit"]:hover {
 }
 
 .settings {
-  font-size: 5.5rem;
+  font-size: 4.7rem;
   position: absolute;
   top: 0;
   margin-top: 1em;
