@@ -1,6 +1,6 @@
 .pokedex {
   margin-top: 1em;
-  color: #fef9f0;
+  color: var(--body-bg-color);
 }
 
 .container_type-pokemon {
@@ -9,7 +9,7 @@
   height: 50px;
   cursor: pointer;
   border: none;
-  box-shadow: 0 5px 20px rgba(47, 72, 88, 1);
+  box-shadow: 0 5px 20px var(--box-shadow);
   padding: 12px 20px;
   border-radius: 10px;
   font-family: "Press Start 2P", cursive;
@@ -38,7 +38,7 @@
     background: #fff;
     display: flex;
     padding: 10px 20px;
-    box-shadow: 0 5px 15px rgba(47, 72, 88, 1);
+    box-shadow: 0 5px 15px var(--box-shadow);
     gap: .3em;
     flex-wrap: wrap;
     border-radius: 50px;

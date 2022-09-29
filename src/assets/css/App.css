@@ -3,15 +3,29 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --body-bg-color: #fef9f0;
+  --body-text-color: black;
+  --box-shadow: rgb(47 72 88);
+  --gretings-color: #2eab65;
+}
 
 body {
+  color: var(--body-text-color);
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   font-family: "Press Start 2P", cursive;
   width: 100%;
-  background: #fef9f0;
+  background: var(--body-bg-color);
+}
+
+.light-mode {
+  --body-bg-color: #2f4858;
+  --body-text-color: #fef9f0;
+  --box-shadow: #fef9f0;
+  --gretings-color: #00d8ac;
 }
 
 .App {
@@ -43,7 +57,7 @@ body {
 h2 {
   position: relative;
   font-size: 6rem;
-  color: #fef9f0;
+  color: var(--body-bg-color);
   font-family: "Press Start 2P", cursive;
   margin-bottom: 1em;
 }
@@ -76,7 +90,7 @@ h2::before {
 
 .gretings {
   font-size: 3rem;
-  color: #2eab65;
+  color: var(--gretings-color);
   margin-bottom: 0.5em;
   filter: drop-shadow(5px 0 0 black);
 }
@@ -91,14 +105,14 @@ input {
 }
 
 input[type="text"] {
-  background: #2f4858;
+  background: var(--box-shadow);
   width: 500px;
   height: 50px;
   border: none;
   outline: none;
   padding: 0 25px;
   border-radius: 25px 0 0 25px;
-  color: #fff;
+  color: var(--body-bg-color);
   font-family: "Press Start 2P", cursive;
   font-size: 1.1rem;
 }
@@ -140,7 +154,7 @@ input[type="submit"]:hover {
   margin: 0.5em;
   font-size: 3rem;
   opacity: 0.5;
-  color: #2f4858;
+  color: var(--box-shadow);
   transition: 1s;
   cursor: pointer;
 }
@@ -151,31 +165,31 @@ input[type="submit"]:hover {
   transition: 1s;
 }
 
-.fa-right-from-bracket{
+.fa-right-from-bracket {
   position: fixed;
   top: 0;
   right: 0;
   margin: 0.5em;
   font-size: 3rem;
   opacity: 0.5;
-  color: #C0564B;
+  color: #c0564b;
   transition: 1s;
   cursor: pointer;
 }
 
-.fa-sliders{
+.fa-sliders {
   position: fixed;
   bottom: 0;
   right: 0;
   margin: 0.5em;
   font-size: 3rem;
   opacity: 0.5;
-  color: #2F4858;
+  color: var(--box-shadow);
   transition: 1s;
   cursor: pointer;
 }
 
-.settings{
+.settings {
   font-size: 5.5rem;
   position: absolute;
   top: 0;

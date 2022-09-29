@@ -8,14 +8,14 @@
 }
 
 .theme-container {
-  box-shadow: 0 5px 20px rgb(47 72 88);
+  box-shadow: 0 5px 20px var(--box-shadow);
   width: 70vw;
   height: 200px;
   padding: 2em 4em;
 }
 
 .items-container {
-  box-shadow: 0 5px 20px rgb(47 72 88);
+  box-shadow: 0 5px 20px var(--box-shadow);
   width: 70vw;
   height: 300px;
   padding: 2em 4em;
@@ -48,7 +48,7 @@ input[type="checkbox"] {
 
 .check {
   position: relative;
-  background: rgb(47 72 88);
+  background: rgba(255, 203, 5);
   width: 80px;
   height: 40px;
   display: block;
@@ -59,8 +59,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked ~ .check{
-    background: rgba(255, 203, 5);
-    /* box-shadow: 0 0 0 1200px rgb(47 72 88); */
+    background: rgb(47 72 88);
 }
 
 .check:before{

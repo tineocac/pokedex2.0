@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../assets/css/Settings.css'
+import darkMode from '../helpers/darkMode';
 
 const Settings = () => {
 
@@ -15,11 +16,11 @@ const Settings = () => {
                 <div className="theme-container">
                     <h1>Theme</h1>
                     
-                    <label className='toggle'>
-                        <p>Light</p>
-                        <input type="checkbox" />
-                        <span className='check'></span>
+                    <label className='toggle' >
                         <p>Dark</p>
+                        <input type="checkbox"  onClick={darkMode}/>
+                        <span className='check'></span>
+                        <p>Light</p>
                     </label>
                     
                 </div>
