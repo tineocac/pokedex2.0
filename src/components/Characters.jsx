@@ -38,7 +38,7 @@ const Characters = () => {
         setPage(1)
     }
 
-    const pokemonPerPage = 10
+    const pokemonPerPage = 12
     const lastPage = Math.ceil(charactersList.length / pokemonPerPage)
     const [page, setPage] = useState(1)
 
@@ -65,7 +65,7 @@ const Characters = () => {
             <header className='header-container'>
 
                 <nav className="gretings-container">
-                    <h3 className='gretings'>¡Bienvenido {userName}!</h3>
+                    <h3 className='gretings'>¡Welcome {userName}!</h3>
                 </nav>
                 <form className="input-container">
                     <input type="text" value={inputName} onChange={e => setInputName(e.target.value)} placeholder='type pokemon name here' />
