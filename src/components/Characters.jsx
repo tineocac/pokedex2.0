@@ -2,8 +2,9 @@ import axios from 'axios';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { setLoader } from '../store/slices/isLoading';
 import CharacterCard from './CharacterCard';
 
 const Characters = () => {
@@ -12,17 +13,23 @@ const Characters = () => {
     const [charactersList, setCharacterList] = useState([])
     const [type, setType] = useState([])
     const [inputName, setInputName] = useState('')
-
     const navigate = useNavigate()
+    const dispatch = useDispatch();
+
+
 
     useEffect(() => {
+        dispatch(setLoader(true))
+
         axios
             .get('https://pokeapi.co/api/v2/type/')
             .then(res => setType(res.data.results))
+            .finally(res => dispatch(setLoader(false)))
 
         axios
             .get('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1155')
             .then(res => setCharacterList(res.data.results))
+            .finally(res => dispatch(setLoader(false)))
 
 
     }, []);
@@ -32,9 +39,12 @@ const Characters = () => {
     }
 
     const typeSelected = (typeUrl) => {
+        dispatch(setLoader(true))
+
         axios
             .get(typeUrl)
-            .then(res => setCharacterList(res.data.pokemon));
+            .then(res => setCharacterList(res.data.pokemon))
+            .finally(res => dispatch(setLoader(false)))
         setPage(1)
     }
 
@@ -54,14 +64,14 @@ const Characters = () => {
         pagesNumber.push(i)
     }
 
-    const styles={
+    const styles = {
         backGround: 'black'
     }
 
     return (
         <>
             <h2 className='pokedex' data-text='&nbsp;POKÉDEX&nbsp;'>&nbsp;POKÉDEX&nbsp;</h2>
-            <i className="fa-solid fa-right-from-bracket"onClick={() => navigate(-1)}></i>
+            <i className="fa-solid fa-right-from-bracket" onClick={() => navigate(-1)}></i>
             <header className='header-container'>
 
                 <nav className="gretings-container">
@@ -85,10 +95,10 @@ const Characters = () => {
                 <button className='change-page' onClick={() => setPage(page - 1)}
                     disabled={page === 1}
                 >Prev Pag</button>
-                
+
                 {
-                    pagesNumber.slice(0, 20).map(number => (
-                        <button className='page-number' key={number} onClick={() => setPage(number) }>{number}</button>
+                    pagesNumber.map(number => (
+                        <button className='page-number' key={number} onClick={() => setPage(number)}>{number}</button>
                     ))
                 }
                 <button className='change-page' onClick={() => setPage(page + 1)}
@@ -111,7 +121,7 @@ const Characters = () => {
                     disabled={page === 1}
                 >Prev Pag</button>
                 {
-                    pagesNumber.slice(0, 20).map(number => (
+                    pagesNumber.map(number => (
                         <button className='page-number' key={number} onClick={() => setPage(number)}>{number}</button>
                     ))
                 }

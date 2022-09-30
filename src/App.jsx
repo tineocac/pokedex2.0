@@ -6,13 +6,18 @@ import CharacterDetail from './components/CharacterDetail'
 import ProtectedRoutes from './components/ProtectedRoutes'
 import './assets/css/pokemons.css'
 import Settings from './components/Settings'
+import Loader from './components/Loader'
+import { useSelector } from 'react-redux'
 
 function App() {
+
+  const loader = useSelector( state => state.loader)
 
   return (
 
     <HashRouter>
       <div className="App">
+        {loader && <Loader/>}
         <Routes>
           <Route path='/' element={<UserInput />} />
 

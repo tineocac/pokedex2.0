@@ -2,18 +2,21 @@ import axios from 'axios';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
+import { setLoader } from '../store/slices/isLoading';
 
 const CharacterDetail = () => {
 
     const [character, setCharcater] = useState({});
+    const dispatch = useDispatch();
 
     useEffect(() => {
+        dispatch(setLoader(false))
         axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
             .then(res => setCharcater(res.data))
+            .finally(res => dispatch(setLoader(false)))
     }, [])
-
-    console.log(character);
 
     const { id } = useParams()
 

@@ -1,0 +1,22 @@
+.loader-box{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(460px / 4);
+    height: 100px;
+    background:url(../icons/runnig-con-zoom.png);
+    z-index: 10;
+    animation: loader .3s steps(4) infinite;
+  }
+  
+  @keyframes loader {
+  
+    from{
+        background-position: 0;
+    }
+    
+    to{
+        background-position: -460px;
+    }
+  }
